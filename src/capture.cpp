@@ -133,7 +133,7 @@ bool Capture::capture()
   if (cap_.read(bridge_.image))
   {
     ros::Time stamp = ros::Time::now() - capture_delay_;
-    bridge_.encoding = enc::BGR8;
+    bridge_.encoding = enc::MONO8;  // This must match the encoding of the video source
     bridge_.header.stamp = stamp;
     bridge_.header.frame_id = frame_id_;
 
